@@ -1,0 +1,14 @@
+﻿{
+
+  "profiles": {
+    "RYoshiga.HotChocolateDemo": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "playground",
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
