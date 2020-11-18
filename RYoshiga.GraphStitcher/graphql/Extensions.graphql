@@ -1,4 +1,4 @@
 extend type Customer {
     orders: [Order!]
-    @delegate(schema: "orders", path: "orders(customerId: $fields:Id)")
+    @delegate(schema: "orders", path: "orders(customerId: $fields:id)")
 }

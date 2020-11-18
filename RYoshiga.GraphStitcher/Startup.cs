@@ -44,7 +44,7 @@ namespace RYoshiga.GraphStitcher
                     builder.AddSchemaFromHttp(graph.SchemaName);
                 }
 
-           //     builder.AddExtensionsFromFile("./graphql/Extensions.graphql");
+                builder.AddExtensionsFromFile("./graphql/Extensions.graphql");
             });
 
             services.AddDataLoaderRegistry();
@@ -107,7 +107,8 @@ namespace RYoshiga.GraphStitcher
     {
         public IError OnError(IError error)
         {
-            return error.WithMessage(error.Exception.Message);
+            var message = error.Exception?.Message ?? error.Message;
+            return error.WithMessage(message);
         }
     }
 

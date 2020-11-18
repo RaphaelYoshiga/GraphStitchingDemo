@@ -57,7 +57,7 @@ namespace RYoshiga.OrderService
 
     public class OrderQuery
     {
-        public ICollection<Order> Orders([Service]OrderRepository repository, int customerId) => repository.GetOrders(customerId);
+        public ICollection<Order> Orders([Service]IOrderRepository repository, int customerId) => repository.GetOrders(customerId);
     }
 
     public interface IOrderRepository
