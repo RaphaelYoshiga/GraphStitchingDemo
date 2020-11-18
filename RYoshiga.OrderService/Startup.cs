@@ -20,7 +20,7 @@ namespace RYoshiga.OrderService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddGraphQL(sp => SchemaBuilder.New()
-                .AddQueryType<Query>()
+                .AddQueryType<OrderQuery>()
                 .AddServices(sp)
                 .Create());
 
@@ -55,7 +55,7 @@ namespace RYoshiga.OrderService
         }
     }
 
-    public class Query
+    public class OrderQuery
     {
         public ICollection<Order> Orders([Service]OrderRepository repository, int customerId) => repository.GetOrders(customerId);
     }

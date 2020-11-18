@@ -20,8 +20,8 @@ namespace RYoshiga.HotChocolateDemo
         {
             services.AddGraphQL(sp => SchemaBuilder.New()
                 .AddQueryType<Query>()
-                .AddType<CustomerType>()
-                .AddType<ItemType>()
+                //.AddType<CustomerType>()
+                //.AddType<ItemType>()
                 .AddServices(sp)
                 .Create());
 

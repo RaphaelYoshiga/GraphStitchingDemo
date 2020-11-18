@@ -43,6 +43,8 @@ namespace RYoshiga.GraphStitcher
 
                     builder.AddSchemaFromHttp(graph.SchemaName);
                 }
+
+           //     builder.AddExtensionsFromFile("./graphql/Extensions.graphql");
             });
 
             services.AddDataLoaderRegistry();

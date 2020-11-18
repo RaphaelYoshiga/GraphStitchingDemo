@@ -3,6 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Extensions.graphql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="graphql\Extensions.graphql" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="HotChocolate.AspNetCore" Version="10.5.3" />
     <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.3" />
