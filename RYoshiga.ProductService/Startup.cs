@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace RYoshiga.OrderService
+namespace RYoshiga.ProductService
 {
     public class Startup
     {
@@ -20,12 +20,13 @@ namespace RYoshiga.OrderService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddGraphQL(sp => SchemaBuilder.New()
-                .AddQueryType<OrderQuery>()
+                .AddQueryType<ProductQuery>()
                 .AddServices(sp)
                 .Create());
 
+            services.AddErrorFilter<GraphQLErrorFilter>();
             //services.AddDataLoader<ProductsByIdDataLoader>();
-            services.AddTransient<IOrderRepository, OrderRepository>();
+            //services.AddTransient<IOrderRepository, OrderRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,54 +56,32 @@ namespace RYoshiga.OrderService
         }
     }
 
-    public class OrderQuery
+    public class ProductQuery
     {
-        public ICollection<Order> Orders([Service]IOrderRepository repository, int customerId) => repository.GetOrders(customerId);
-    }
-
-    public interface IOrderRepository
-    {
-        ICollection<Order> GetOrders(in int customerId);
-    }
-
-    public class OrderRepository : IOrderRepository
-    {
-        public ICollection<Order> GetOrders(in int customerId)
+        public Product Product(Guid id)
         {
-            return new List<Order>
+            return new Product()
             {
-                new Order
-                {
-                    Total = 111,
-                    Items = new List<Item>
-                    {
-                        new Item
-                        {
-                            ProductId = Guid.NewGuid(),
-                            Quantity = 1,
-                            UnitCost = 1
-                        },
-                        new Item
-                        {
-                            ProductId = Guid.NewGuid(),
-                            Quantity = 13,
-                            UnitCost = 13
-                        },
-                        new Item
-                        {
-                            ProductId = Guid.NewGuid(),
-                            Quantity = 14,
-                            UnitCost = 14
-                        }
-                        , new Item
-                        {
-                            ProductId = Guid.NewGuid(),
-                            Quantity = 12,
-                            UnitCost = 12
-                        }
-                    }
-                }
+                Id = id,
+                Name = "lala"
             };
         }
     }
+
+    public class Product
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+    }
+
+
+    public class GraphQLErrorFilter : IErrorFilter
+    {
+        public IError OnError(IError error)
+        {
+            var message = error.Exception?.Message ?? error.Message;
+            return error.WithMessage(message);
+        }
+    }
+
 }

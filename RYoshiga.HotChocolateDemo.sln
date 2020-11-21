@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RYoshiga.HotChocolateDemo", "RYoshiga.HotChocolateDemo\RYoshiga.HotChocolateDemo.csproj", "{CE8C155F-24F2-451D-8C5F-90D8856AD268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RYoshiga.GraphStitcher", "RYoshiga.GraphStitcher\RYoshiga.GraphStitcher.csproj", "{56A0AA43-B8CF-4456-BAA2-D1CBB1749FC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RYoshiga.GraphStitcher", "RYoshiga.GraphStitcher\RYoshiga.GraphStitcher.csproj", "{56A0AA43-B8CF-4456-BAA2-D1CBB1749FC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RYoshiga.OrderService", "RYoshiga.OrderService\RYoshiga.OrderService.csproj", "{2257670E-A412-451E-8E19-D15B7768BDD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RYoshiga.OrderService", "RYoshiga.OrderService\RYoshiga.OrderService.csproj", "{2257670E-A412-451E-8E19-D15B7768BDD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RYoshiga.ProductService", "RYoshiga.ProductService\RYoshiga.ProductService.csproj", "{A4FB9AE0-4464-495B-9C00-F55FF3A87881}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{2257670E-A412-451E-8E19-D15B7768BDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2257670E-A412-451E-8E19-D15B7768BDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2257670E-A412-451E-8E19-D15B7768BDD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4FB9AE0-4464-495B-9C00-F55FF3A87881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4FB9AE0-4464-495B-9C00-F55FF3A87881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4FB9AE0-4464-495B-9C00-F55FF3A87881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4FB9AE0-4464-495B-9C00-F55FF3A87881}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

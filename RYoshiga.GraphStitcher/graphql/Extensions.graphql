@@ -2,3 +2,8 @@ extend type Customer {
     orders: [Order!]
     @delegate(schema: "orders", path: "orders(customerId: $fields:id)")
 }
+
+extend type Item {
+    product: Product!
+    @delegate(schema: "products", path: "product(id: $fields:productId)")
+}

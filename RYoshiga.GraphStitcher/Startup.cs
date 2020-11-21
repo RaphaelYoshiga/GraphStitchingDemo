@@ -30,6 +30,11 @@ namespace RYoshiga.GraphStitcher
                 {
                     SchemaName = "orders",
                     Url = "https://localhost:5003/graph/"
+                },
+                new GraphProvider()
+                {
+                    SchemaName = "products",
+                    Url = "https://localhost:5005/graph/"
                 }
             };
 
