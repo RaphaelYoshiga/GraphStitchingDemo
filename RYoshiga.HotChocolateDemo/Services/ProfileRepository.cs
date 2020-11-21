@@ -13,6 +13,7 @@ namespace RYoshiga.HotChocolateDemo.Services
         {
             return new Customer
             {
+                Id = 1,
                 Title = "Mr",
                 LastName = "Wick",
                 FirstName = "John"

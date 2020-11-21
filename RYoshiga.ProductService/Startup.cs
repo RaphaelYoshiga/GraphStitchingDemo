@@ -1,8 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using HotChocolate;
 using HotChocolate.AspNetCore;
 using HotChocolate.AspNetCore.Playground;
@@ -28,8 +25,6 @@ namespace RYoshiga.ProductService
             services.AddDataLoader<ProductsByIdDataLoader>();
 
             services.AddErrorFilter<GraphQLErrorFilter>();
-            //services.AddDataLoader<ProductsByIdDataLoader>();
-            //services.AddTransient<IOrderRepository, OrderRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,14 +37,6 @@ namespace RYoshiga.ProductService
 
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
-            });
-
             app.UsePlayground(new PlaygroundOptions()
             {
                 Path = "/playground",
@@ -57,20 +44,6 @@ namespace RYoshiga.ProductService
             });
             app.UseGraphQL("/graph");
         }
-    }
-
-    public class ProductQuery
-    {
-        public async Task<Product> Product([DataLoader] ProductsByIdDataLoader dataLoader, Guid id, CancellationToken token)
-        {
-            return await dataLoader.LoadAsync(id, token);
-        }
-    }
-
-    public class Product
-    {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
     }
 
 

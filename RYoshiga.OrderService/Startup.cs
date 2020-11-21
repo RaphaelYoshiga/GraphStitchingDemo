@@ -38,14 +38,6 @@ namespace RYoshiga.OrderService
 
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
-            });
-
             app.UsePlayground(new PlaygroundOptions()
             {
                 Path = "/playground",

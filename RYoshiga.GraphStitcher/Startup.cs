@@ -24,7 +24,7 @@ namespace RYoshiga.GraphStitcher
                 new GraphProvider()
                 {
                     SchemaName = "profile",
-                    Url = "http://localhost:5000/graph/"
+                    Url = "https://localhost:5000/graph/"
                 },
                 new GraphProvider()
                 {
@@ -60,8 +60,6 @@ namespace RYoshiga.GraphStitcher
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -75,14 +73,6 @@ namespace RYoshiga.GraphStitcher
             app.UseGraphQL("/graph");
 
             app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
-            });
         }
 
         private static void ConfigureHttpClient(IServiceCollection services, GraphProvider graph)
@@ -115,9 +105,5 @@ namespace RYoshiga.GraphStitcher
             var message = error.Exception?.Message ?? error.Message;
             return error.WithMessage(message);
         }
-    }
-
-    public class Query
-    {
     }
 }
