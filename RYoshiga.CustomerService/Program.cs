@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace RYoshiga.HotChocolateDemo
+namespace RYoshiga.CustomerService
 {
     public class Program
     {

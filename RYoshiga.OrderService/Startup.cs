@@ -24,7 +24,6 @@ namespace RYoshiga.OrderService
                 .AddServices(sp)
                 .Create());
 
-            //services.AddDataLoader<ProductsByIdDataLoader>();
             services.AddTransient<IOrderRepository, OrderRepository>();
         }
 

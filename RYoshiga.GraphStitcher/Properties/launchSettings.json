@@ -3,8 +3,8 @@
     "RYoshiga.GraphStitcher": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "/playground" ,
-      "applicationUrl": "https://localhost:5007;http://localhost:5006",
+      "launchUrl": "playground" ,
+      "applicationUrl": "http://localhost:5004",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

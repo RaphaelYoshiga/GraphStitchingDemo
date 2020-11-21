@@ -1,0 +1,1 @@
+dotnet run --project ./RYoshiga.OrderService/RYoshiga.OrderService.csproj

@@ -1,6 +1,6 @@
-using RYoshiga.HotChocolateDemo.Models;
+using RYoshiga.CustomerService.Models;
 
-namespace RYoshiga.HotChocolateDemo.Services
+namespace RYoshiga.CustomerService.Services
 {
     public interface IProfileRepository
     {

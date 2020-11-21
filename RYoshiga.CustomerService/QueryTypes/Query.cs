@@ -1,8 +1,8 @@
 using HotChocolate;
-using RYoshiga.HotChocolateDemo.Models;
-using RYoshiga.HotChocolateDemo.Services;
+using RYoshiga.CustomerService.Models;
+using RYoshiga.CustomerService.Services;
 
-namespace RYoshiga.HotChocolateDemo.QueryTypes
+namespace RYoshiga.CustomerService.QueryTypes
 {
     public class Query
     {

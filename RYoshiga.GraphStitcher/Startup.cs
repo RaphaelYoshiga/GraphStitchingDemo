@@ -24,17 +24,17 @@ namespace RYoshiga.GraphStitcher
                 new GraphProvider()
                 {
                     SchemaName = "profile",
-                    Url = "https://localhost:5000/graph/"
+                    Url = "http://localhost:5000/graph/"
                 },
                 new GraphProvider()
                 {
                     SchemaName = "orders",
-                    Url = "https://localhost:5003/graph/"
+                    Url = "http://localhost:5001/graph/"
                 },
                 new GraphProvider()
                 {
                     SchemaName = "products",
-                    Url = "https://localhost:5005/graph/"
+                    Url = "http://localhost:5002/graph/"
                 }
             };
 
@@ -81,12 +81,6 @@ namespace RYoshiga.GraphStitcher
             {
                 client.BaseAddress = new Uri(graph.Url);
 
-                var context = sp.GetRequiredService<IHttpContextAccessor>().HttpContext;
-                if (context == null || !context.Request.Headers.ContainsKey("Authorization"))
-                    return;
-
-                var authorization = context.Request.Headers["Authorization"].ToString();
-                client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse(authorization);
             });
         }
     }
