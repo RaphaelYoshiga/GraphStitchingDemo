@@ -2,9 +2,9 @@
 
 HotChocolate example on how to setup a Graph Stiching service, with 3 other dependencies.
 
-![Example](architecture.png)
-
 [Blog explanation](http://example.com)
+
+![Example](architecture.png)
 
 ### Running this example
 
