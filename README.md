@@ -2,7 +2,7 @@
 
 HotChocolate example on how to setup a Graph Stiching service, with 3 other dependencies.
 
-[Blog explanation](http://example.com)
+[Blog explanation](https://itnext.io/graphql-schema-stitching-c-2ccfd209d3ce)
 
 ![Example](architecture.png)
 
