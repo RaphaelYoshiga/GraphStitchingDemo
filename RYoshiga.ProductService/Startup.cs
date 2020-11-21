@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using HotChocolate;
 using HotChocolate.AspNetCore;
@@ -23,6 +24,8 @@ namespace RYoshiga.ProductService
                 .AddQueryType<ProductQuery>()
                 .AddServices(sp)
                 .Create());
+
+            services.AddDataLoader<ProductsByIdDataLoader>();
 
             services.AddErrorFilter<GraphQLErrorFilter>();
             //services.AddDataLoader<ProductsByIdDataLoader>();
@@ -58,13 +61,9 @@ namespace RYoshiga.ProductService
 
     public class ProductQuery
     {
-        public Product Product(Guid id)
+        public async Task<Product> Product([DataLoader] ProductsByIdDataLoader dataLoader, Guid id, CancellationToken token)
         {
-            return new Product()
-            {
-                Id = id,
-                Name = "lala"
-            };
+            return await dataLoader.LoadAsync(id, token);
         }
     }
 

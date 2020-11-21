@@ -25,7 +25,6 @@ namespace RYoshiga.HotChocolateDemo
                 .AddServices(sp)
                 .Create());
 
-            services.AddDataLoader<ProductsByIdDataLoader>();
             services.AddTransient<IProfileRepository, ProfileRepository>();
         }
 

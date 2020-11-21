@@ -9,4 +9,8 @@
     <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataLoaders\" />
+  </ItemGroup>
+
 </Project>
